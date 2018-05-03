@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Curation_BreakDown</title>
+  <meta name="generator" content="Google Web Designer 3.0.1.0319">
+ <link rel="stylesheet" type="text/css" href="https://fdsteemtools.neocities.org/curation_break_down/curation_break_down.css">
+  <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+  <script src="https://fdsteemtools.neocities.org/curation_break_down/curation_break_down.js"></script>
+</head>
+
+<body class="htmlNoPages">
+<h1 class="gwd-p-1bg1">Curation Break-Down</h1>
+<sub class="gwd-p-1fg9">@firedream</sub>
+<div class="gwd-div-1mao" id="username">
+ 	<input type="text" id="link" value="post link" class="gwd-input-1dre gwd-input-11wz">
+ 	<input id="Start" type="button" value="Start" class="gwd-input-1y5b" onclick="Start_Analysis()">
+</div>
+  
+<div class="gwd-div-pwqb" id="main_container">
+	<div class="gwd-div-13l0 gwd-div-12m1" id="voter"></div>
+    <div class="gwd-div-13l0 gwd-div-1p6p gwd-div-tpab" id="rshares"></div>
+    <div class="gwd-div-13l0 gwd-div-1p6p gwd-div-7m8m gwd-div-1dbr" id="rshares_before"></div>
+    <div class="gwd-div-13l0 gwd-div-1p6p gwd-div-7m8m gwd-div-1c79 gwd-div-pjm3" id="curation_wo_penalty"></div>
+    <div class="gwd-div-13l0 gwd-div-1p6p gwd-div-7m8m gwd-div-1c79 gwd-div-dipv gwd-div-1115" id="vote_time"></div>
+    <div class="gwd-div-13l0 gwd-div-1p6p gwd-div-7m8m gwd-div-1c79 gwd-div-dipv gwd-div-1g6w gwd-div-1xmh" id="SP_early_penalty"></div>
+    <div class="gwd-div-13l0 gwd-div-1p6p gwd-div-7m8m gwd-div-1c79 gwd-div-dipv gwd-div-1g6w gwd-div-1nfi gwd-div-14rb" id="SP_curation"></div>
+    <div class="gwd-div-13l0 gwd-div-1p6p gwd-div-7m8m gwd-div-1c79 gwd-div-dipv gwd-div-1g6w gwd-div-1nfi gwd-div-1u9e gwd-div-1x6u" id="vote_sp"></div>
+    <div class="gwd-div-13l0 gwd-div-1p6p gwd-div-7m8m gwd-div-1c79 gwd-div-dipv gwd-div-1g6w gwd-div-1nfi gwd-div-1u9e gwd-div-1gzk" id="performance"></div>
+</div>
+<p class="gwd-p-m0fu gwd-p-1baj">Post Pay-Out</p>
+<p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j">Total Curation</p>
+<p class="gwd-p-m0fu gwd-p-tey3 gwd-p-18xh gwd-p-x76q">Net RShares</p>
+<p class="gwd-p-m0fu gwd-p-tey3 gwd-p-18xh gwd-p-1tu0">Post Date</p>
+<p class="gwd-p-m0fu gwd-p-tey3 gwd-p-18xh gwd-p-1tu0 gwd-p-12z5">Feed Price</p>
+<p class="gwd-p-m0fu gwd-p-16ba" id="post_pay"></p>
+<p class="gwd-p-m0fu gwd-p-16ba gwd-p-53tf" id="curation"></p>
+<p class="gwd-p-m0fu gwd-p-16ba gwd-p-53tf gwd-p-1nr1" id="net_shares"></p>
+<p class="gwd-p-m0fu gwd-p-16ba gwd-p-53tf gwd-p-1nr1 gwd-p-e1hq gwd-p-uov9" id="feed_price"></p>
+<p class="gwd-p-m0fu gwd-p-16ba gwd-p-53tf gwd-p-1nr1 gwd-p-e1hq gwd-p-18tk" id="post_date"></p>
+<div class="gwd-div-1vxg" id="header_container">
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-12fo gwd-p-1dql gwd-p-17i8 gwd-p-1kra gwd-p-16p9 gwd-p-myzn gwd-p-g5rf gwd-p-11x4" id="h_1">% Performance</p>
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-12fo gwd-p-1dql gwd-p-17i8 gwd-p-1kra gwd-p-16p9 gwd-p-myzn gwd-p-g5rf" id="h_9">Vote Value</p>
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-12fo gwd-p-1dql gwd-p-17i8 gwd-p-1kra gwd-p-16p9 gwd-p-myzn" id="h_8">Net Curation</p>
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-12fo gwd-p-1dql gwd-p-17i8 gwd-p-1kra gwd-p-16p9" id="h_7">Vote Early Loss</p>
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-12fo gwd-p-1dql gwd-p-17i8 gwd-p-1kra" id="h_6">Voting Time</p>
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-12fo gwd-p-1dql gwd-p-17i8" id="h_5">Gross Curation</p>
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-12fo gwd-p-1dql" id="h_4">RShares Before</p>
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-12fo" id="h_3">RShares</p>
+    <p class="gwd-p-m0fu gwd-p-tey3 gwd-p-1k3j gwd-p-gu2h gwd-p-8130" id="h_2">Voter</p>
+</div>
+</body>
+
+</html>
